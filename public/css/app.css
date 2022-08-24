@@ -72,6 +72,7 @@
   }
 }
 
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -10270,4 +10271,82 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+
+/********************************************************************
+*
+* SuperNews
+*
+********************************************************************/
+
+.header-super{
+  background-color: #343A40;
+  color: #fff;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-super .container{
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-super .navbar-collapse{
+  display: flex !important;
+  flex-basis: auto;
+}
+
+.header-super .navbar-collapse a{
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #fff;
+}
+
+.header-super .navbar-collapse a:hover{  
+  color: #10DAA9;
+}
+
+.header-super .navbar-collapse .navbar-nav{
+  flex-direction: row;
+}
+
+.header-super .navbar-collapse .dropdown-menu{
+  background: #F8F8F8;  
+}
+
+.header-super .navbar-collapse .dropdown-menu a{  
+  color: #343A40;
+}
+
+nav.navbar{
+  height: 50px;
+}
+
+.content-home h2{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+  margin-bottom: 40px;
+}
+
+.content-home .news-area{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+#navbarSupportedContent ul{
+  width: 100%;
+  justify-content: center;  
+}
+
+.card{
+  margin-bottom: 40px;
+}
+
+.btn-title{
+  text-decoration: none !important;
 }

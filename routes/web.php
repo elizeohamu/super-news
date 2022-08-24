@@ -19,16 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
+Route::resource('categoria', 'App\Http\Controllers\CategoriaController')->name('index', 'categoria')->middleware('auth');
+Route::resource('noticia', 'App\Http\Controllers\NoticiaController')->name('index', 'noticia')->middleware('auth');
+Route::resource('artigo', 'App\Http\Controllers\ArtigoController')->name('index', 'artigo')->middleware('auth');
+Route::resource('banner', 'App\Http\Controllers\BannerController')->name('index', 'banner')->middleware('auth');
+Route::resource('anuncio', 'App\Http\Controllers\AnuncioController')->name('index', 'anuncio')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SuperNews') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,23 +21,12 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="header-super">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                <a href="{{ url('/home') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a>  
+                <div class="collapse navbar-collapse">
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -70,7 +59,41 @@
                                 </div>
                             </li>
                         @endguest
+                    </ul>  
+                    </div>            
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">               
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+
+                        @auth
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('categoria') }}">{{ __('Categoria') }}</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('noticia') }}">{{ __('Notícia') }}</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('artigo') }}">{{ __('Artigo') }}</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('banner') }}">{{ __('Banner') }}</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('anuncio') }}">{{ __('Anuncio') }}</a>
+                        </li>
+                        @endauth
+
                     </ul>
+                    
                 </div>
             </div>
         </nav>

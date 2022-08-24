@@ -16,7 +16,7 @@ class CreateArtigosTable extends Migration
         Schema::create('artigos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->string('texto');
+            $table->text('texto');
             $table->datetime('data');
 
             $table->integer('categoria_id')->unsigned();

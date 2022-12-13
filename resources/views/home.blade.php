@@ -1,19 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
 @auth
-    <div class="card content-home">
-        <div class="card-body">
-            
-            @foreach($banners as $banner)  
-                <div class="news-area">
-                    <img src="{{ asset('storage/uploads/banner/'.$banner->size) }}" width="300" height="40" />
+    @foreach($banners as $banner)  
+                <div class="banner-area">
+                    <img src="{{ asset('storage/uploads/banner/'.$banner->size) }}" />
                 </div>              
-            @endforeach
+     @endforeach
+@endauth
+<div class="container">
+@auth       
+    <div class="card content-home">
+        <div class="card-body">            
+            <h2>Notícias Recentes</h2>              
+            @foreach($noticias as $noticia) 
             
-        </div>
+                 @if($loop->index < 4)                       
+                <div class="news-area">              
+                    <h3><a href="{{ route('noticia.show',$noticia->id)}}" class="btn-title">{{$noticia->titulo}}</a></h3> 
+                    
+                    <?php
+                    $limitNewsChar = "{$noticia->texto}";
+                    echo mb_strimwidth($limitNewsChar, 0, 480, "...");
+                    ?>   
+
+                </div>  
+                @endif                        
+            @endforeach 
+            <div><a class="btn btn-primary" href="{{ url('/news') }}">Ver todos</a></div>
+        </div>  
     </div>
+
     <div class="card content-home">
         <div class="card-body">
             
@@ -24,23 +42,6 @@
             @endforeach
             
         </div>
-    </div>
-    <div class="card content-home">
-        <div class="card-body">            
-            <h2>Notícias Recentes</h2>
-            @foreach($noticias as $noticia) 
-                <div class="news-area">              
-                    <h3><a href="{{ route('noticia.show',$noticia->id)}}" class="btn-title">{{$noticia->titulo}}</a></h3> 
-                    
-                    <?php
-                    $limitNewsChar = "{$noticia->texto}";
-                    echo mb_strimwidth($limitNewsChar, 0, 480, "...");
-                    ?>                    
-                        
-                </div>                          
-            @endforeach 
-            <div><a class="btn btn-primary">Ver todos</a></div>
-        </div>  
     </div>
     
     <div class="card content-home">

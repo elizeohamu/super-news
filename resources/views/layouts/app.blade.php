@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -72,24 +73,39 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto">   
+                                             
 
-                        @auth
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('categoria') }}">{{ __('Categoria') }}</a>
-                        </li>
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('noticia') }}">{{ __('Notícia') }}</a>
-                        </li>
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('artigo') }}">{{ __('Artigo') }}</a>
-                        </li>
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('banner') }}">{{ __('Banner') }}</a>
-                        </li>
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('anuncio') }}">{{ __('Anuncio') }}</a>
-                        </li>
+                        @auth 
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('categoria') }}">{{ __('Categoria') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('noticia') }}">{{ __('Notícia') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('artigo') }}">{{ __('Artigo') }}</a>
+                            </li>
+                        @role('admin')
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('banner') }}">{{ __('Banner') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('anuncio') }}">{{ __('Anuncio') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('users') }}">{{ __('Usuários') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('roles') }}">{{ __('Papéis') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('permissions') }}">{{ __('Permissões') }}</a>
+                            </li>
+                        @endrole  
                         @endauth
 
                     </ul>
@@ -101,6 +117,14 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <a href="{{ url('/home') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

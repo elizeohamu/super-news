@@ -25,5 +25,27 @@ Route::resource('artigo', 'App\Http\Controllers\ArtigoController')->name('index'
 Route::resource('banner', 'App\Http\Controllers\BannerController')->name('index', 'banner')->middleware('auth');
 Route::resource('anuncio', 'App\Http\Controllers\AnuncioController')->name('index', 'anuncio')->middleware('auth');
 
+Route::resource('users', 'App\Http\Controllers\UsersController')->name('index', 'users')->middleware('role:admin');
+Route::resource('posts', 'App\Http\Controllers\PostsController')->name('index', 'posts')->middleware('auth', 'permission');
+Route::resource('roles', 'App\Http\Controllers\RolesController')->name('index', 'roles')->middleware('auth', 'permission');
+Route::resource('permissions', 'App\Http\Controllers\PermissionsController')->name('index', 'permissions')->middleware('auth', 'permission');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
+
+
+Route::group(['middleware' => ['guest']], function() {    
+    
+
+});
+
+Route::group(['middleware' => ['auth', 'permission']], function() {
+    /**
+     * Logout Routes
+     */
+    
+    Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');   
+
+
+});
 

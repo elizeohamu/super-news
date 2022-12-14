@@ -31,20 +31,20 @@
           </div>
           <div class="card">
              <div class="card-header card-header-primary">
-                <h4 class="card-title ">Banner List</h4>
+                <h4 class="card-title ">Banner</h4>
              </div>
              <div class="card-body">
                 <div class="table-responsive">
                    <table class="table">
-                      <thead class=" text-primary">
+                      <thead>
                          <th>
-                            Category Name
+                            Nome da Categoria
                          </th>
                          <th>
-                            Category Banner
+                            Categoria do Banner
                          </th>
                          <th>
-                            Created At
+                            Criado em
                          </th>
                          <th>Editar</th>
                          <th>Deletar</th>
@@ -93,10 +93,6 @@
             @else
             <p></p>
        @endif
-
-         
-
-         
        
      </div>     
 @endsection

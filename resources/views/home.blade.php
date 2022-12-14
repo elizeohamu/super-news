@@ -34,13 +34,11 @@
 
     <div class="card content-home">
         <div class="card-body">
-            
-            @foreach($anuncios as $anuncio)  
-                <div class="news-area">
-                    <img src="{{ asset('storage/uploads/anuncio/'.$anuncio->size) }}" width="300" height="40" />
-                </div>              
+            <div class="anuncio-area">
+            @foreach($anuncios as $anuncio)
+                    <img src="{{ asset('storage/uploads/anuncio/'.$anuncio->size) }}" width="300" height="40" />                             
             @endforeach
-            
+            </div> 
         </div>
     </div>
     
@@ -58,7 +56,7 @@
 
                 </div>              
             @endforeach
-            <div><a class="btn btn-primary">Ver todos</a></div>
+            <div><a class="btn btn-primary" href="{{ url('/articles') }}">Ver todos</a></div>
         </div>
     </div>
 @endauth

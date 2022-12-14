@@ -1,33 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-light p-4 rounded">
-        <h2>Add new permission</h2>
-        <div class="lead">
-            Add new permission.
-        </div>
+<div class="container">    
+    <div class="col-md-12">
+        <div class="card">
+       
+             <div class="card-header card-header-primary">
+                <h4 class="card-title ">Adicionar Permissão</h4>
+            </div>
+           
+            <div class="card-body">
+                <div class="container mt-4">
 
-        <div class="container mt-4">
+                    <form method="POST" action="{{ route('permissions.store') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input value="{{ old('name') }}" 
+                                type="text" 
+                                class="form-control" 
+                                name="name" 
+                                placeholder="Name" required>
 
-            <form method="POST" action="{{ route('permissions.store') }}">
-                @csrf
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input value="{{ old('name') }}" 
-                        type="text" 
-                        class="form-control" 
-                        name="name" 
-                        placeholder="Name" required>
+                            @if ($errors->has('name'))
+                                <span class="text-danger text-left">{{ $errors->first('name') }}</span>
+                            @endif
+                        </div>
 
-                    @if ($errors->has('name'))
-                        <span class="text-danger text-left">{{ $errors->first('name') }}</span>
-                    @endif
+                        <button type="submit" class="btn btn-primary">Salvar Permissão</button>
+                        <a href="{{ route('permissions') }}" class="btn btn-secondary">Voltar</a>
+                    </form>
+
                 </div>
+            </div>
 
-                <button type="submit" class="btn btn-primary">Save permission</button>
-                <a href="{{ route('permissions') }}" class="btn btn-default">Back</a>
-            </form>
         </div>
-
     </div>
+</div>
 @endsection

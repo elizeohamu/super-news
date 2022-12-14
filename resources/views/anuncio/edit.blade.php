@@ -15,11 +15,14 @@
                 @csrf
                 @method('PUT')
 
-                <img src="{{ asset('storage/uploads/anuncio/'.$anuncio->size) }}" width="300px">
+                <div class="img-area" >
+                  <img src="{{ asset('storage/uploads/anuncio/'.$anuncio->size) }}" width="300px"> 
+                </div>              
+                              
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Anuncio Name</label>
+                      <label class="bmd-label-floating">Nome do Anúncio</label>
                       <input type="text" class="form-control" name="descricao" value="{{$anuncio->descricao}}">
                       @if ($errors->has('descricao'))
                       <span class="errormsg text-danger">{{ $errors->first('descricao') }} </span>
@@ -28,24 +31,22 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group bmd-form-group is-focused file-input">
-                      <label class="bmd-label-floating">Category Anuncio</label>
+                      <label class="bmd-label-floating">Categoria do Anúncio</label>
                       <input type="file" name="anuncio_img" class="form-control" accept="image">
                     </div>
                     @if ($errors->has('anuncio_img'))
                     <span class="errormsg text-danger">{{ $errors->first('anuncio_img') }} </span>
                     @endif
-                  </div>                
-                  
-                  
+                  </div> 
+
                 </div>
-                
-                <button type="submit" class="btn btn-primary pull-left">Save</button>
+                <br />
+                <button type="submit" class="btn btn-primary pull-left">Salvar</button>
+                <a href="{{ route('anuncio') }}" class="btn btn-secondary">Voltar</a>
                 <div class="clearfix"></div>
               </form>
             </div>
-          </div>           
-          
-
+          </div> 
     </div>
 @endsection
 </div>

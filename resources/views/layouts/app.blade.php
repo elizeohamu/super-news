@@ -24,7 +24,8 @@
     <div id="app">
         <div class="header-super">
             <div class="container">
-                <a href="{{ url('/home') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a>  
+            @guest <a href="{{ url('/') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a> @endguest
+            @auth  <a href="{{ url('/home') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a> @endauth
                 <div class="collapse navbar-collapse">
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
@@ -64,6 +65,7 @@
                     </div>            
             </div>
         </div>
+        @auth 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">               
                 
@@ -76,7 +78,7 @@
                     <ul class="navbar-nav me-auto">   
                                              
 
-                        @auth 
+                       
                             <li class="nav-item">
                                         <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
@@ -106,13 +108,14 @@
                                         <a class="nav-link" href="{{ route('permissions') }}">{{ __('Permissões') }}</a>
                             </li>
                         @endrole  
-                        @endauth
+                        
 
                     </ul>
                     
                 </div>
             </div>
         </nav>
+        @endauth
 
         <main class="py-4">
             @yield('content')
@@ -121,7 +124,8 @@
         <footer>
             <div class="footer">
                 <div class="container">
-                    <a href="{{ url('/home') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a>
+                    @guest <a href="{{ url('/') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a> @endguest
+                    @auth  <a href="{{ url('/home') }}"><img src="{{ asset('imgs/marca_news.png') }}" /></a> @endauth
                 </div>
             </div>
         </footer>

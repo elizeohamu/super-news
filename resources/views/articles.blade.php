@@ -7,12 +7,12 @@
     <div class="card content-home">
         <div class="card-body">            
             <h2>Notícias Recentes</h2>
-            @foreach($noticias as $noticia) 
+            @foreach($artigos as $artigo) 
                 <div class="news-area">              
-                    <h3><a href="{{ route('noticia.show',$noticia->id)}}" class="btn-title">{{$noticia->titulo}}</a></h3> 
+                    <h3><a href="{{ route('artigo.show',$artigo->id)}}" class="btn-title">{{$artigo->titulo}}</a></h3> 
                     
                     <?php
-                    $limitNewsChar = "{$noticia->texto}";
+                    $limitNewsChar = "{$artigo->texto}";
                     echo mb_strimwidth($limitNewsChar, 0, 480, "...");
                     ?>                    
                         

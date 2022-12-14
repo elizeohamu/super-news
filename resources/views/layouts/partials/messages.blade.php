@@ -1,5 +1,3 @@
-resources/views/layouts/partials/messages.blade.php
-
 @if(Session::get('success', false))
     <?php $data = Session::get('success'); ?>
     @if (is_array($data))

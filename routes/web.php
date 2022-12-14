@@ -32,6 +32,7 @@ Route::resource('permissions', 'App\Http\Controllers\PermissionsController')->na
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
+Route::get('/articles', [App\Http\Controllers\ArticlesController::class, 'index'])->name('articles');
 
 
 Route::group(['middleware' => ['guest']], function() {    

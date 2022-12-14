@@ -13,7 +13,7 @@
 
 <div class="card uper">
   <div class="card-header">
-    Adicionar Notícia
+    <h4 class="card-title ">Adicionar Notícia</h4>    
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -49,8 +49,9 @@
               @endforeach
               </select>
           </div>   
-
+          <br />
           <button type="submit" class="btn btn-primary">Adicionar</button>
+          <a href="{{ route('noticia') }}" class="btn btn-secondary">Voltar</a>
       </form>
   </div>
 </div>

@@ -19,7 +19,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Banner Name</label>
+                      <label class="bmd-label-floating">Nome do Banner</label>
                       <input type="text" class="form-control" name="descricao" value="{{$banner->descricao}}">
                       @if ($errors->has('descricao'))
                       <span class="errormsg text-danger">{{ $errors->first('descricao') }} </span>
@@ -28,24 +28,23 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group bmd-form-group is-focused file-input">
-                      <label class="bmd-label-floating">Category Banner</label>
+                      <label class="bmd-label-floating">Categoria do Banner</label>
                       <input type="file" name="banner_img" class="form-control" accept="image">
                     </div>
                     @if ($errors->has('banner_img'))
                     <span class="errormsg text-danger">{{ $errors->first('banner_img') }} </span>
                     @endif
-                  </div>                
-                  
+                  </div>     
                   
                 </div>
-                
-                <button type="submit" class="btn btn-primary pull-left">Save</button>
+                <br />
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{{ route('banner') }}" class="btn btn-secondary">Voltar</a>
                 <div class="clearfix"></div>
               </form>
             </div>
-          </div>           
+          </div> 
           
-
     </div>
 @endsection
 </div>

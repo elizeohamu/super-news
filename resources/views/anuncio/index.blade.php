@@ -31,7 +31,7 @@
           </div>
           <div class="card">
              <div class="card-header card-header-primary">
-                <h4 class="card-title ">Anuncio List</h4>
+                <h4 class="card-title ">Lista de Anúncios</h4>
              </div>
              <div class="card-body">
                 <div class="table-responsive">

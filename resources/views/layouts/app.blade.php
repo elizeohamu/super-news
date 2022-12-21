@@ -75,13 +75,20 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">   
-                                             
-
-                       
+                    <ul class="navbar-nav me-auto"> 
                             <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
-                            </li>
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('news') }}">{{ __('Notícias') }}</a>
+                            </li>  
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('articles') }}">{{ __('Artigos') }}</a>
+                            </li>  
+                        @role('writer') 
+                            <li class="nav-item">
+                                <p class="nav-text">Editar:</p>
+                            </li>  
                             <li class="nav-item">
                                         <a class="nav-link" href="{{ route('categoria') }}">{{ __('Categoria') }}</a>
                             </li>
@@ -91,7 +98,20 @@
                             <li class="nav-item">
                                         <a class="nav-link" href="{{ route('artigo') }}">{{ __('Artigo') }}</a>
                             </li>
-                        @role('admin')
+                        @endrole
+                        @role('admin')                   
+                            <li class="nav-item">
+                                <p class="nav-text">Editar:</p>
+                            </li>  
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('categoria') }}">{{ __('Categoria') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('noticia') }}">{{ __('Notícia') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('artigo') }}">{{ __('Artigo') }}</a>
+                            </li>
                             <li class="nav-item">
                                         <a class="nav-link" href="{{ route('banner') }}">{{ __('Banner') }}</a>
                             </li>

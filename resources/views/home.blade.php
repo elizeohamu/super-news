@@ -32,14 +32,14 @@
         </div>  
     </div>
 
-    <div class="card content-home">
-        <div class="card-body">
+    <div class="content-home">
+        
             <div class="anuncio-area">
             @foreach($anuncios as $anuncio)
-                    <img src="{{ asset('storage/uploads/anuncio/'.$anuncio->size) }}" width="300" height="40" />                             
+                    <img src="{{ asset('storage/uploads/anuncio/'.$anuncio->size) }}" />                             
             @endforeach
             </div> 
-        </div>
+        
     </div>
     
     <div class="card content-home">

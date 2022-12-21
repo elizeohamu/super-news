@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +50,7 @@ Route::group(['middleware' => ['auth', 'permission']], function() {
 
 
 });
+
+Route::get('auth/google', [App\Http\Controllers\GoogleAuthController::class, 'redirect'])->name('google-auth');
+Route::get('auth/google/call-back', [App\Http\Controllers\GoogleAuthController::class, 'callbackGoogle']);
 

@@ -11,7 +11,7 @@
 
             <div class="card-body">        
        
-                <a href="{{ route('users.create') }}" class="btn btn-primary">Adicionar Novo Usuário</a>
+                <a href="{{ route('users.create') }}" class="btn btn-primary" style="display: none;">Adicionar Novo Usuário</a>
 
                 <div class="mt-2">
                 @include('layouts.partials.messages')

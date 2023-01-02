@@ -1,0 +1,23 @@
+File: F:\www\super-news\app\Models\User.php
+Line: 80
+Test: return in_array('name', (new App\Models\User)->getFillable())
+Return: bool(true)
+Status: Success
+
+File: F:\www\super-news\app\Models\User.php
+Line: 83
+Test: return in_array('email', (new App\Models\User)->getFillable())
+Return: bool(true)
+Status: Success
+
+File: F:\www\super-news\app\Models\User.php
+Line: 86
+Test: return in_array('username', (new App\Models\User)->getFillable())
+Return: bool(true)
+Status: Success
+
+File: F:\www\super-news\app\Models\User.php
+Line: 89
+Test: return in_array('password', (new App\Models\User)->getFillable())
+Return: bool(true)
+Status: Success

@@ -74,4 +74,22 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Verifica se a propriedade $Fillable possui name no array
+     * @test return in_array('name', (new App\Models\User)->getFillable())
+     * 
+     * Verifica se a propriedade $Fillable possui email no array
+     * @test return in_array('email', (new App\Models\User)->getFillable())
+     * 
+     * Verifica se a propriedade $Fillable possui username no array
+     * @test return in_array('username', (new App\Models\User)->getFillable())
+     * 
+     * Verifica se a propriedade $Fillable possui password no array
+     * @test return in_array('password', (new App\Models\User)->getFillable())
+     */
+    public function getFillable(){
+        return $this->fillable;
+    }
+
 }
